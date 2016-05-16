@@ -90,11 +90,6 @@ function buildOutputs(func, peopleObjArr) {
 		})
 
 		// Sort by last name alphabetically 
-		function outputOneSort(a, b) {
-			if (a.last > b.last) return 1;
-			if (a.last < b.last) return -1;
-			return 0;
-		}
 		ladies.sort(outputOneSort);
 		gents.sort(outputOneSort);
 		var output1 = ladies.concat(gents);
@@ -121,6 +116,13 @@ function buildOutputs(func, peopleObjArr) {
 
 		func(writeOutputFile, [output1, output2, output3]);
 	} else func( writeOutputFile, [] );
+}
+
+// Sorts by last name alphabetically
+function outputOneSort(a, b) {
+	if (a.last > b.last) return 1;
+	if (a.last < b.last) return -1;
+	return 0;
 }
 
 // Lays out the 3 sorted versions of the data in one nice string. 'func' should be 'writeOutputFile'
