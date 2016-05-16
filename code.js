@@ -119,7 +119,7 @@ function buildOutputs(func, peopleObjArr) {
 }
 
 // Sorts by last name alphabetically
-function outputOneSorts(a, b) {
+function outputOneSort(a, b) {
 	if (a.last > b.last) return 1;
 	if (a.last < b.last) return -1;
 	return 0;
